@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  web:
+    container_name: web
+    image: microsoft/dotnet:runtime
+    volumes:
+      - ./build/SignUp:/app:ro
+    working_dir: /app
+    command: dotnet SignUp.dll
+    ports:
+      - "5000:5000"
+    networks:
+      - sign_up
+
+networks:
+  sign_up:
+    driver: bridge
