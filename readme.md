@@ -41,3 +41,10 @@ From the project root, run:
 Ctrl+C
 docker-compose down
 ```
+
+## Cleaning
+
+From the project root, run:
+```
+./clean.sh
+```
