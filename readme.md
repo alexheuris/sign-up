@@ -2,9 +2,9 @@
 
 ## Dependencies
 
-- Dotnet Core SDK
-- Docker
-- Docker Compose
+- [Dotnet Core SDK](https://www.microsoft.com/net/core)
+- [Docker](https://docs.docker.com/engine/installation/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Restore
 
