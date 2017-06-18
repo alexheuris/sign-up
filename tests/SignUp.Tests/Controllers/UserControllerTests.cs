@@ -21,7 +21,7 @@ namespace SignUp.Tests.Controllers
         }
 
         [Fact]
-        public void SigningUpWithAValidUserModelReturnsAnOkResult()
+        public void SigningUpWithAValidUserModelReturnsARedirectToActionResult()
         {
             var controller = new UserController();
 
