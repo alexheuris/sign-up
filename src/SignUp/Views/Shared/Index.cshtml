@@ -1,0 +1,24 @@
+@model SignUp.Models.UserModel
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="~/css/reset.css">
+        <link rel="stylesheet" href="~/css/site.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="heading">Sign Up</h1>
+            @using(Html.BeginForm("Create", "User", FormMethod.Post, new { @class = "form" }))
+            {
+                @Html.ValidationMessageFor(u => u.Email, null, new { @class = "error-message", type = "email" })
+                @Html.TextBoxFor(u => u.Email, new { @class = "field", placeholder = Html.DisplayNameFor(u => u.Email) })
+                @Html.ValidationMessageFor(u => u.Password, null, new { @class = "error-message" })
+                @Html.TextBoxFor(u => u.Password, new { @class = "field", placeholder = Html.DisplayNameFor(u => u.Password), type = "password" })
+                @Html.ValidationMessageFor(u => u.ConfirmPassword, null, new { @class = "error-message" })
+                @Html.TextBoxFor(u => u.ConfirmPassword, new { @class = "field", placeholder = Html.DisplayNameFor(u => u.ConfirmPassword), type = "password" })
+                <input class="button" type="submit" value="Sign Up">
+            }
+        </div>
+    </body>
+</html>
