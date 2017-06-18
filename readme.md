@@ -20,7 +20,14 @@ From the project root, run:
 dotnet build
 ```
 
-## Publish
+## Unit testing
+
+From the project root, run:
+```
+dotnet test tests/SignUp.Tests/SignUp.Tests.csproj
+```
+
+## Publishing
 
 From the project root, run:
 ```
