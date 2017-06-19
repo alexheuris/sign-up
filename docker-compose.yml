@@ -8,8 +8,27 @@ services:
       - ./build/SignUp:/app:ro
     working_dir: /app
     command: dotnet SignUp.dll
+    environment:
+      - DB_HOST=db
+      - DB_USERNAME=sa
+      - DB_PASSWORD=myPASSWORD123
+      - DB_NAME=SignUp
     ports:
       - "5000:5000"
+    networks:
+      - sign_up
+  db:
+    container_name: db
+    image: microsoft/mssql-server-linux
+    volumes:
+      - ./db/setup.sh:/app/setup.sh:ro
+      - ./db/setup.sql:/app/setup.sql:ro
+      - ./db/entrypoint.sh:/app/entrypoint.sh:ro
+    working_dir: /app
+    entrypoint: ./entrypoint.sh
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=myPASSWORD123
     networks:
       - sign_up
 

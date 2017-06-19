@@ -24,7 +24,7 @@ dotnet build
 
 From the project root, run:
 ```
-dotnet test tests/SignUp.Tests/SignUp.Tests.csproj
+./run-unit-tests.sh
 ```
 
 ## Publishing
@@ -36,7 +36,7 @@ From the project root, run:
 
 ## Running
 
-From the project root, run:
+Ensure that docker has access to at least 4GB of RAM for the MSSQL container. From the project root, run:
 ```
 docker-compose up
 ```
