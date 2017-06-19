@@ -66,3 +66,5 @@ From the project root, run:
 ## Notes
 
 - A valid password is a password that has a length inbetween 12 and 32 characters. This makes the password significantly hard to crack and allows users the freedom to enter whichever characters they desire. Complex passwords are still highly recommended. See [Password Security: Complexity vs. Length](http://resources.infosecinstitute.com/password-security-complexity-vs-length/#gref) for more information.
+
+- The script used to create the database and tables used by the app is located at [setup.sql](db/setup.sql). This script gets run as part of `docker-compose up`. No manual run is needed.
