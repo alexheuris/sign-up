@@ -43,7 +43,7 @@ From the project root, run:
 docker-compose up
 ```
 
-To check that a user has been successfully added to the database run the following command while the `db` container is running:
+After a user has signed up, check that the user has been successfully added to the database by running the following command while the `db` container is running:
 ```
 docker exec -it db /opt/mssql-tools/bin/sqlcmd -U sa -P myPASSWORD123 -d SignUp -Q "SELECT * FROM users;"
 ```
