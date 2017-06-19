@@ -7,17 +7,14 @@ namespace SignUp.Controllers
     using Microsoft.AspNetCore.Mvc;
     using SignUp.Models;
 
+    [Route("/")]
     public sealed class HomeController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
             var model = new UserModel();
             return View(model);
-        }
-
-        public IActionResult Success()
-        {
-            return View();
         }
     }
 }

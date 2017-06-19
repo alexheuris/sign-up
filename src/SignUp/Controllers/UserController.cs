@@ -33,7 +33,12 @@ namespace SignUp.Controllers
 
             await _userService.AddUser(model);
 
-            return RedirectToAction("Success", "Home");
+            return RedirectToAction("Index", "Success");
+        }
+
+        public IActionResult Success()
+        {
+            return View();
         }
     }
 }
