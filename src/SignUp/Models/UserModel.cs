@@ -1,5 +1,6 @@
 namespace SignUp.Models
 {
+    using BCrypt.Net;
     using System.ComponentModel.DataAnnotations;
 
     public class UserModel
@@ -21,5 +22,10 @@ namespace SignUp.Models
         [Compare("Password", ErrorMessage = "Passwords do not match")]
         [Display(Name = "Confirm password")]
         public string ConfirmPassword { get; set; }
+
+        public void HashPassword()
+        {
+            Password = BCrypt.HashPassword(Password);
+        }
     }
 }

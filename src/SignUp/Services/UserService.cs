@@ -1,5 +1,6 @@
 namespace SignUp.Services
 {
+
     using System;
     using System.Data;
     using System.Data.SqlClient;
@@ -12,6 +13,8 @@ namespace SignUp.Services
     {
         public async Task<int> AddUser(UserModel model)
         {
+            model.HashPassword();
+
             using (var connection = DatabaseConnectionFactory.Create())
             {
                 await connection.OpenAsync();

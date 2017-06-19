@@ -36,7 +36,9 @@ From the project root, run:
 
 ## Running
 
-Ensure that docker has access to at least 4GB of RAM for the MSSQL container. From the project root, run:
+This step requires that the solution has been restored and published (see above). Ensure that docker has access to at least 4GB of RAM for the MSSQL container.
+
+From the project root, run:
 ```
 docker-compose up
 ```

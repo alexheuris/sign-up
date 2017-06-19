@@ -26,7 +26,7 @@ namespace SignUp.Data.Queries
             using (var command = new SqlCommand(_query, _connection))
             {
                 command.Parameters.Add("@Email", SqlDbType.VarChar, 256).Value = model.Email;
-                command.Parameters.Add("@Password", SqlDbType.VarChar, 32).Value = model.Password;
+                command.Parameters.Add("@Password", SqlDbType.VarChar, 128).Value = model.Password;
                 return await command.ExecuteNonQueryAsync();
             }
         }
