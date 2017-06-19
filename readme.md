@@ -36,7 +36,7 @@ From the project root, run:
 
 ## Running
 
-This step requires that the solution has been restored and published (see above). Ensure that docker has access to at least 4GB of RAM for the MSSQL container.
+This step requires that the solution has been restored and published (see above). Ensure that docker has access to at least 4GB of RAM for the MSSQL container. Note also that the database takes ~15 seconds to initialise.
 
 From the project root, run:
 ```

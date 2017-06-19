@@ -21,8 +21,15 @@ namespace SignUp.Controllers
         [HttpPost("/user")]
         public async Task<IActionResult> Create(UserModel model)
         {
-            if (!ModelState.IsValid)
+            if (model == null || !ModelState.IsValid)
                 return View("Index", model);
+
+            var user = await _userService.GetUser(model.Email);
+            if (user != null)
+            {
+                ModelState.AddModelError("Email", "Email already exists");
+                return View("Index", model);
+            }
 
             await _userService.AddUser(model);
 

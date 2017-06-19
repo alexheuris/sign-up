@@ -5,6 +5,7 @@ namespace SignUp.Services
 
     public interface IUserService
     {
+        Task<UserModel> GetUser(string email);
         Task<int> AddUser(UserModel model);
     }
 }
