@@ -41,6 +41,11 @@ Ensure that docker has access to at least 4GB of RAM for the MSSQL container. Fr
 docker-compose up
 ```
 
+To check that a user has been successfully added to the database run the following command while the `db` container is running:
+```
+docker exec -it db /opt/mssql-tools/bin/sqlcmd -U sa -P myPASSWORD123 -d SignUp -Q "SELECT * FROM users;"
+```
+
 ## Stopping
 
 From the project root, run:
