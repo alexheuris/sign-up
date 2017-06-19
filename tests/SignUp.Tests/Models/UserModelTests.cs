@@ -65,7 +65,7 @@ namespace SignUp.Tests.Models
         }
 
         [Fact]
-        public void WhenPasswordHasLengthLessThanTenCharactersThenAnErrorMessageIsReturned()
+        public void WhenPasswordHasLengthLessThanTwelveCharactersThenAnErrorMessageIsReturned()
         {
             var model = new UserModel
             {
@@ -74,7 +74,7 @@ namespace SignUp.Tests.Models
 
             var results = ValidateModel(model);
 
-            Assert.Equal(GetErrorMessageFor(results, "Password"), "Please enter a password with a length between 10 and 32 characters");
+            Assert.Equal(GetErrorMessageFor(results, "Password"), "Please enter a password with a length between 12 and 32 characters");
         }
 
         [Fact]
@@ -87,7 +87,7 @@ namespace SignUp.Tests.Models
 
             var results = ValidateModel(model);
 
-            Assert.Equal(GetErrorMessageFor(results, "Password"), "Please enter a password with a length between 10 and 32 characters");
+            Assert.Equal(GetErrorMessageFor(results, "Password"), "Please enter a password with a length between 12 and 32 characters");
         }
 
         [Fact]

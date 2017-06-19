@@ -62,3 +62,7 @@ From the project root, run:
 ```
 ./clean.sh
 ```
+
+## Notes
+
+- A valid password is a password that has a length inbetween 12 and 32 characters. This makes the password significantly hard to crack and allows users the freedom to enter whichever characters they desire. Complex passwords are still highly recommended. See [Password Security: Complexity vs. Length](http://resources.infosecinstitute.com/password-security-complexity-vs-length/#gref) for more information.
