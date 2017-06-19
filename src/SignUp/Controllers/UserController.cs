@@ -9,7 +9,7 @@ namespace SignUp.Controllers
     using SignUp.Models;
     using SignUp.Services;
 
-    public class UserController : Controller
+    public sealed class UserController : Controller
     {
         private readonly IUserService _userService;
 

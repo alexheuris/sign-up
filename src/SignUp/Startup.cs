@@ -11,7 +11,7 @@ using SignUp.Services;
 
 namespace SignUp
 {
-    public class Startup
+    public sealed class Startup
     {
         public Startup(IHostingEnvironment env)
         {

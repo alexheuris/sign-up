@@ -5,7 +5,7 @@ namespace SignUp.Data.Queries
     using System.Threading.Tasks;
     using SignUp.Models;
 
-    public class AddUserQuery
+    public sealed class AddUserQuery
     {
         private readonly SqlConnection _connection;
         private readonly string _query;

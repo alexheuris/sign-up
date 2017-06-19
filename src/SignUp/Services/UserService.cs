@@ -9,7 +9,7 @@ namespace SignUp.Services
     using SignUp.Data.Queries;
     using SignUp.Models;
 
-    public class UserService : IUserService
+    public sealed class UserService : IUserService
     {
         public async Task<UserModel> GetUser(string email)
         {

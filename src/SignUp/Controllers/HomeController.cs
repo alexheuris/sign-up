@@ -7,7 +7,7 @@ namespace SignUp.Controllers
     using Microsoft.AspNetCore.Mvc;
     using SignUp.Models;
 
-    public class HomeController : Controller
+    public sealed class HomeController : Controller
     {
         public IActionResult Index()
         {

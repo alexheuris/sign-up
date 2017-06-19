@@ -3,7 +3,7 @@ namespace SignUp.Models
     using BCrypt.Net;
     using System.ComponentModel.DataAnnotations;
 
-    public class UserModel
+    public sealed class UserModel
     {
         [DataType(DataType.Text)]
         [Required(ErrorMessage = "Please enter an email address")]
@@ -13,7 +13,7 @@ namespace SignUp.Models
 
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "Please enter a password")]
-        [StringLength(32, MinimumLength = 10, ErrorMessage = "Please enter a password with a length between {2} and {1} characters")]
+        [StringLength(32, MinimumLength = 12, ErrorMessage = "Please enter a password with a length between {2} and {1} characters")]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
