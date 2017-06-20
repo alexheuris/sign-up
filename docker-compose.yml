@@ -5,16 +5,19 @@ services:
     container_name: web
     image: microsoft/dotnet:runtime
     volumes:
-      - ./build/SignUp:/app:ro
+      - ./app/start.sh:/app/start.sh
+      - ./build/SignUp:/app
     working_dir: /app
-    command: dotnet SignUp.dll
+    command: /bin/bash start.sh
     environment:
+      - CERT_PASSWORD=password
       - DB_HOST=db
       - DB_USERNAME=sa
       - DB_PASSWORD=myPASSWORD123
       - DB_NAME=SignUp
     ports:
       - "5000:5000"
+      - "5001:5001"
     networks:
       - sign_up
   db:

@@ -7,6 +7,7 @@ namespace SignUp.Controllers
     using Microsoft.AspNetCore.Mvc;
 
     [Route("/success")]
+    [RequireHttps]
     public sealed class SuccessController : Controller
     {
         [HttpGet]

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -27,7 +29,10 @@ namespace SignUp
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new RequireHttpsAttribute());
+            });
             services.AddTransient<IUserService, UserService>();
         }
 
@@ -35,6 +40,10 @@ namespace SignUp
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+
+            var options = new RewriteOptions().AddRedirectToHttps(301, 5001);
+
+            app.UseRewriter(options);
 
             app.UseExceptionHandler("/Shared/Error");
             app.UseStaticFiles();

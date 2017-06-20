@@ -8,6 +8,7 @@ namespace SignUp.Controllers
     using SignUp.Models;
 
     [Route("/")]
+    [RequireHttps]
     public sealed class HomeController : Controller
     {
         [HttpGet]

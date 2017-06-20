@@ -19,6 +19,7 @@ namespace SignUp.Controllers
         }
 
         [HttpPost("/user")]
+        [RequireHttps]
         public async Task<IActionResult> Create(UserModel model)
         {
             if (model == null || !ModelState.IsValid)
